@@ -1,0 +1,1062 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services, .skills, .work, .contact footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: rgb(9, 100, 219);
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbar styling start */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 25px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: rgb(9, 100, 219);
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: rgb(9, 100, 219);
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar.sticky .logo a{
+    color: #111;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color:  #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    text-decoration: underline;
+    text-decoration-color: rgb(9, 100, 219);
+    text-decoration-thickness: 2px;
+}
+.navbar.sticky .menu li a:hover{
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 2px;
+}
+
+
+/*menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: rgb(9, 100, 219);
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+/* home section styling */
+.home{
+    display: flex;
+    position: relative;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("imagini/conny-schneider-xuTJZ7uD7PI-unsplash.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    transform: scaleX(-1);
+    z-index: 0;
+}
+
+.home > * {
+    position: relative;
+    z-index: 1;
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 0;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 65px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    font-size: 35px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+
+
+/*software section styling*/
+/* ==================== Chat Section ==================== */
+.chat-section {
+    background: #000000;
+    width: 100vw;
+    height: 100vh; /* ocupă tot ecranul */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.chat-container {
+    background: #111;
+    color: #fff;
+    border-radius: 16px;
+    width: 100%;
+    height: 80%; /* ocupă aproape toată înălțimea */
+    max-width: 2000px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.chat-container h2 {
+    text-align: center;
+    color: #0e4be4;
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.chat-box {
+    flex: 1; /* se întinde pe tot spațiul rămas */
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 12px;
+    background: #222;
+    margin-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #0e4be4 #111;
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: #0e4be4;
+    border-radius: 8px;
+}
+
+.chat-message {
+    margin-bottom: 12px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.chat-message.user {
+    text-align: right;
+    color: #aacddf;
+}
+
+.chat-message.bot {
+    text-align: left;
+    color: #fff;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+}
+
+.chat-input input:focus {
+    outline: none;
+    border-color: #0e4be4;
+}
+
+.chat-input button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #0e4be4;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.chat-input button:hover {
+    background: #0a38b8;
+}
+
+/* ==================== Responsivitate ==================== */
+@media (max-width: 600px) {
+    .chat-container {
+        width: 95%;
+        height: 90%;
+        padding: 16px;
+    }
+}
+
+
+/* about section styling */
+.about .title::after{
+    content: "Scopul nostru";
+}
+.about {
+    min-height: 100vh;
+    background-color: white;
+}
+.about .about-content .left{
+    width: 50%;
+}
+.about .about-content .left img{
+    height: 400px;
+    width: 550px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+.about .about-content .right{
+    width: 50%;
+}
+.about .about-content .right .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+    color: rgb(9, 100, 219);
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right button:hover{
+    color: rgb(9, 100, 219);
+    background: none;
+}
+
+
+/* qr code section styling */
+.services {
+    min-height: 100vh; /* ocupă întreaga înălțime a ecranului */
+    display: flex;
+    align-items: center; /* centrare verticală */
+    justify-content: center; /* centrare orizontală */
+    background: #f5f7ff;
+    padding: 40px 20px;
+}
+
+/* Container general */
+.services-container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Titlu secțiune */
+.services .title {
+    font-size: 32px;
+    color: #0e4bec;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+/* Flex layout pentru card și instrucțiuni */
+.services-flex {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center; /* centru vertical */
+    flex-wrap: wrap;
+}
+
+.services-instructions {
+    flex: 1 1 350px;
+    max-width: 400px; /* mai mare */
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(14,75,228,0.15);
+    padding: 36px 28px; /* mai mult spațiu */
+    font-size: 18px; /* text mai mare */
+    color: #111;
+}
+
+.services-instructions h3 {
+    color: #0e4bec;
+    font-size: 22px; /* titlu mai mare */
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.services-instructions ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.services-instructions li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.services-card {
+    flex: 1 1 360px;
+    max-width: 480px; /* mai mare */
+    padding: 36px 28px; /* mai mult spațiu */
+    background: linear-gradient(135deg, #0e4bec, #7f5af0);
+    color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(14,75,228,0.28);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(14,75,228,0.38);
+}
+
+.services-card label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.services-card input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.services-card input[type="file"]:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* QR Reader Box */
+#qr-reader {
+    margin: 0 auto 12px;
+    max-width: 320px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.15);
+    padding: 10px;
+    box-shadow: 0 2px 12px rgba(255,255,255,0.2);
+}
+
+/* Rezultate QR */
+#qr-reader-results {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 12px;
+    color: #ffd700;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+#qr-reader-results.show-result {
+    opacity: 1;
+    transform: scale(1);
+    color: #00ffcc;
+}
+
+#qr-reader-results.error-result {
+    opacity: 1;
+    transform: scale(1);
+    color: #ff4d4f;
+}
+
+@media (max-width: 900px) {
+    .services-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    .services-instructions, .services-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .services-instructions {
+        font-size: 16px;
+        padding: 24px 20px;
+    }
+    .services-card {
+        font-size: 16px;
+        padding: 24px 20px;
+    }
+    #qr-reader {
+        max-width: 280px;
+    }
+}
+
+
+
+/* skills section styling */
+.skills {
+    min-height: 100vh;       /* ocupă întreg ecranul */
+    background: #111;        /* fundal negru pentru secțiune */
+    color: #fff;             /* text alb implicit */
+    padding: 80px 0;
+}
+.skills .title::before{
+    background: #fff;
+}
+.skills .title::after {
+    background: #111;        /* fundal titlu negru */
+    color: rgb(9, 100, 219); /* albastru evidențiere */
+}
+
+.skills .skills-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* spațiu între carduri */
+    justify-content: space-between;
+}
+
+/* fiecare bloc de skill */
+.skills .skill-item {
+    background: #fff;        /* fundal alb */
+    color: #111;             /* text negru */
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1 1 calc(50% - 20px); /* două coloane pe desktop, cu gap */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills .skill-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.skills .skill-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: rgb(9, 100, 219); /* titlu albastru */
+}
+
+.skills .skill-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;             /* text gri închis pentru vizibilitate */
+    text-align: justify;
+}
+
+/* buton optional */
+.skills .skill-item button {
+    display: inline-block;
+    background: rgb(9, 100, 219);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: 2px solid rgb(9, 100, 219);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skills .skill-item button:hover {
+    color: rgb(9, 100, 219);
+    background: none;
+    border-color: rgb(9, 100, 219);
+}
+
+/* responsive pentru mobil */
+@media (max-width: 768px) {
+    .skills .skill-item {
+        flex: 1 1 100%; /* un card pe rând pe mobil */
+    }
+}
+
+
+/* Secțiunea Work */
+.work {
+    min-height: 100vh;
+    padding: 80px 60px;
+    background: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #111;
+    box-sizing: border-box;
+    
+}
+
+/* Titlu Secțiune */
+.work .title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    margin-bottom: 50px;
+}
+
+/* Container carduri cu Flexbox */
+.work-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+/* Card individual */
+.work-item {
+    flex: 1 1 calc(20% - 30px);
+    min-width: 250px;
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover card */
+.work-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    background: rgb(9, 100, 219);
+    color: #fff;
+}
+
+/* Titlu card */
+.work-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: rgb(9, 100, 219);
+    transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Text card */
+.work-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Bara de progres */
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar .fill {
+    height: 100%;
+    border-radius: 6px;
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+                filter 0.3s ease;
+}
+
+/* Umplerea barei la hover */
+.work-item:hover .fill {
+    filter: brightness(1.2);
+}
+
+/* Schimbarea culorii textului la hover */
+.work-item:hover h3,
+.work-item:hover p {
+    color: #fff;
+}
+
+/* Culoare bara pe categorii */
+.fill.hardware { background: #1f77b4; }
+.fill.cloud { background: #ff7f0e; }
+.fill.web { background: #2ca02c; }
+.fill.software { background: #d62728; }
+.fill.other { background: #9467bd; }
+
+/* Responsive */
+@media (max-width: 1200px) { .work-item { flex: 1 1 calc(33.33% - 30px); } }
+@media (max-width: 900px) { .work-item { flex: 1 1 calc(50% - 30px); } }
+@media (max-width: 600px) { .work-item { flex: 1 1 100%; } .work { padding: 60px 20px; } }
+
+
+/* Sectiunea Produse */
+.purchases {
+  padding: 60px 20px;
+  background: #f4f6f9;
+}
+
+.purchases .title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.products-table {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.products-table thead {
+  background:rgb(9, 100, 219);
+  color: #fff;
+}
+
+.products-table th, .products-table td {
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.products-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.products-table tbody tr:hover {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.total {
+  margin-top: 25px;
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.highlight {
+  color: rgb(9, 100, 219);
+}
+
+
+
+/* contact section styling */
+/* Secțiunea Contacts */
+.contact {
+    min-height: 100vh;
+    padding: 80px 60px;
+    background: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #111;
+    box-sizing: border-box;
+}
+
+/* Titlu Secțiune */
+/* Secțiunea Contacts */
+.contact {
+    min-height: 100vh;
+    padding: 80px 60px;
+    background: #111; /* fundal negru */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    box-sizing: border-box;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Titlu Secțiune */
+.contact .title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: rgb(9, 100, 219);
+    margin-bottom: 50px;
+}
+
+/* Container carduri cu Flexbox */
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Card individual */
+.contact-item {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background: #222; /* carduri închis la culoare */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+    background: rgb(9, 100, 219);
+    color: #fff;
+}
+
+/* Titlu card */
+.contact-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: rgb(9, 100, 219);
+    transition: color 0.4s ease;
+}
+
+.contact-item:hover h3 {
+    color: #fff;
+}
+
+/* Text card */
+.contact-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    transition: color 0.4s ease;
+}
+
+.contact-item:hover p {
+    color: #fff;
+}
+
+/* Link card */
+.contact-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(6,140,223);
+    background: #fff;
+    border: 2px solid rgb(9, 100, 219);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-link {
+    background: #fff;
+    color: rgb(9, 100, 219);
+    filter: brightness(1.2);
+}
+
+/* Container imagini */
+.contact-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.contact-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 6px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.contact-img:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: brightness(1.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-item { flex: 1 1 100%; }
+    .contact { padding: 60px 20px; }
+}
+
+
+
+/* footer section styling */
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span a{
+    color: rgb(9, 100, 219);
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .skills-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .skills .skills-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+
+
+/*-----mobile background --------*/
+@media only screen and (max-width: 600px) {
+.home{
+    background: url("images/IMG_correct.jpg") no-repeat top;
+}
+}

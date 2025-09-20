@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spends</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+</head>
+
+<body>
+
+    <!-- menu section start -->
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="/">Spends</a>
+            </div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Acasă</a></li>
+                <li><a href="#services" class="menu-btn">Scanare QR</a></li>
+                <li><a href="#software" class="menu-btn">Chat Inteligent</a></li>
+                <li><a href="#work" class="menu-btn">Analitică avansată</a></li>
+                <li><a href="#purchases" class="menu-btn">Istoric</a></li>
+                <li><a href="#about" class="menu-btn">Date de contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- home section start -->
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Bine ați venit!</div>
+                <div class="text-2">Aici puteți să:</div>
+                <div class="text-3"><span class="typing"></span></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- qr code reader section start -->
+    <section class="services" id="services">
+    <div class="max-width">
+        <h2 class="title">Scanează QR Code din fotografie</h2>
+        <div class="services-flex">
+
+            <!-- Instrucțiuni - stânga -->
+            <div class="services-instructions">
+                <h3>Instrucțiuni</h3>
+                <ul>
+                    <li>Apasă pe butonul <b>Scanează QR din fotografie</b>.</li>
+                    <li>Selectează imaginea care conține codul QR.</li>
+                    <li>Rezultatul va fi afișat imediat în partea dreaptă.</li>
+                    <li>Asigură-te că imaginea este clară și codul QR este vizibil.</li>
+                </ul>
+            </div>
+
+            <!-- Card scanare - dreapta -->
+            <div class="services-card">
+                <label for="qr-image-upload">Alege o fotografie cu QR:</label>
+                <input type="file" id="qr-image-upload" accept="image/*">
+
+                <div id="qr-reader"></div>
+                <div id="qr-reader-results">Rezultatul scanării va apărea aici</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Include librăria html5-qrcode -->
+<script src="https://unpkg.com/html5-qrcode@2.3.10/html5-qrcode.min.js"></script>
+
+<script>
+document.getElementById('qr-image-upload').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function() {
+        const html5Qr = new Html5Qrcode("qr-reader");
+        html5Qr.scanFile(file, true)
+            .then(decodedText => {
+                const resultDiv = document.getElementById('qr-reader-results');
+                resultDiv.textContent = "QR Code: " + decodedText;
+                resultDiv.classList.add('show-result');
+                setTimeout(() => resultDiv.classList.remove('show-result'), 1500);
+            })
+            .catch(err => {
+                const resultDiv = document.getElementById('qr-reader-results');
+                resultDiv.textContent = "Nu s-a găsit niciun QR valid în fotografie.";
+                resultDiv.classList.add('error-result');
+                setTimeout(() => resultDiv.classList.remove('error-result'), 1500);
+            });
+    };
+    reader.readAsDataURL(file);
+});
+</script>
+
+
+
+<!-- software section start -->
+<section class="chat-section" id="software">
+    <div class="chat-container">
+        <h2>Chat GPT</h2>
+        <div id="chat-box" class="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Scrie un mesaj..." />
+            <button id="send-btn">Trimite</button>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+
+   <!------work section------>
+  <section class="work" id="work">
+  <h2 class="title">Analiza cumpărăturilor</h2>
+  <div class="work-content">
+    <div class="work-item">
+      <h3>Tehnologii digitale</h3>
+      <p>0 operațiuni</p>
+      <div class="progress-bar">
+        <div class="fill hardware" style="width: 0%;"></div>
+      </div>
+      <p>0% din total</p>
+    </div>
+
+    <div class="work-item">
+      <h3>Alimente și băuturi</h3>
+      <p>4 operațiuni</p>
+      <div class="progress-bar">
+        <div class="fill cloud" style="width: 9.75%;"></div>
+      </div>
+      <p>9,75% din total</p>
+    </div>
+
+    <div class="work-item">
+      <h3>Baruri și restaurante</h3>
+      <p>1 operațiune</p>
+      <div class="progress-bar">
+        <div class="fill web" style="width: 6.5%;"></div>
+      </div>
+      <p>6,5% din total</p>
+    </div>
+
+    <div class="work-item">
+      <h3>Treansport și livrare</h3>
+      <p>0 operațiuni</p>
+      <div class="progress-bar">
+        <div class="fill software" style="width: 0%;"></div>
+      </div>
+      <p>0% din total</p>
+    </div>
+
+    <div class="work-item">
+      <h3>Transferuri</h3>
+      <p>0 operațiuni</p>
+      <div class="progress-bar">
+        <div class="fill other" style="width: 0%;"></div>
+      </div>
+      <p>0% din total</p>
+    </div>
+
+    <div class="work-item">
+      <h3>Călătorii</h3>
+      <p>0 operațiuni</p>
+      <div class="progress-bar">
+        <div class="fill other" style="width: 0%;"></div>
+      </div>
+      <p>0% din total</p>
+    </div>
+
+      <div class="work-item">
+      <h3>Turism și distracții</h3>
+      <p>0 operațiuni</p>
+      <div class="progress-bar">
+        <div class="fill other" style="width: 0%;"></div>
+      </div>
+      <p>0% din total</p>
+      </div>
+
+      <div class="work-item">
+      <h3>Altele</h3>
+      <p>5 operațiuni</p>
+      <div class="progress-bar">
+        <div class="fill other" style="width: 83.8%;"></div>
+      </div>
+      <p>83,8% din total</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Sectiunea Produse -->
+<section class="purchases" id="purchases">
+  <div class="max-width">
+    <h2 class="title">Produse cumpărate în ultima lună</h2>
+
+    <table class="products-table" id="products-table">
+      <thead>
+        <tr>
+          <th>Produs</th>
+          <th>Cantitate</th>
+          <th>Preț unitar (lei)</th>
+          <th>Total (lei)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Caiet 24f Pro</td>
+          <td>1</td>
+          <td>6.7</td>
+          <td class="subtotal"></td>
+        </tr>
+        <tr>
+          <td>Roll SAMURAY</td>
+          <td>1</td>
+          <td>140.0</td>
+          <td class="subtotal"></td>
+        </tr>
+        <tr>
+          <td>Guma DIROL Wh</td>
+          <td>1</td>
+          <td>10.6</td>
+          <td class="subtotal"></td>
+        </tr>
+        <tr>
+          <td>Iaurt ACTIVIA</td>
+          <td>4</td>
+          <td>12.4</td>
+          <td class="subtotal"></td>
+        </tr>
+        <tr>
+          <td>Guma DIROL Ha</td>
+          <td>1</td>
+          <td>10.6</td>
+          <td class="subtotal"></td>
+        </tr>
+         <tr>
+          <td>Crenvusti FIL</td>
+          <td>1</td>
+          <td>141.5</td>
+          <td class="subtotal"></td>
+        </tr>
+         <tr>
+          <td>Consultație medicală</td>
+          <td>1</td>
+          <td>800.0</td>
+          <td class="subtotal"></td>
+        </tr>
+         <tr>
+          <td>TEREA Produs din tutun care nu arde AME</td>
+          <td>1</td>
+          <td>61.0</td>
+          <td class="subtotal"></td>
+        </tr>
+         <tr>
+          <td>PANDATIV</td>
+          <td>1</td>
+          <td>650.0</td>
+          <td class="subtotal"></td>
+        </tr> <tr>
+          <td>LANȚ</td>
+          <td>1</td>
+          <td>310.0</td>
+          <td class="subtotal"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="total">
+      Total cheltuit: <span class="highlight" id="total-sum">0 lei</span>
+    </div>
+  </div>
+</section>
+
+
+
+ <!-- about section start -->
+ <section class="about" id="about">
+    <div class="max-width">
+        <h2 class="title">Despe noi</h2>
+        <div class="about-content">
+            <div class="column left">
+                <img src="imagini/Lucid_Origin_Create_a_modern_sleek_and_professional_logo_for_a_2 copy.jpg" alt="Spends Logo">
+            </div>
+            <div class="column right">
+                <div class="text">Noi suntem BSB.Club, <span class="typing-2"></span></div>
+                <p>Echipa noastră este formată din developeri aflați la început de carieră, dedicați procesului de învățare
+                   și dezvoltării continue. Ne caracterizează perseverența, dorința de perfecționare și capacitatea de a
+                   colabora eficient pentru a livra rezultate de calitate.
+                <p>Considerăm că fiecare proiect reprezintă o
+                   oportunitate de a acumula experiență valoroasă și de a contribui la crearea de soluții inovatoare în domeniul tehnologiei.
+                </p>
+                </p>
+                <div class="icons">
+                    <div class="row">
+                        <i class="fas fa-map-pin" style="width: 25px;"></i>
+                        <div class="info">
+                            <div class="head">Adresa</div>
+                            <div class="subtitle">Chisinau, Republica Moldova</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info">
+                            <div class="head">Email</div>
+                            <div class="subtitle">team.BCB.Club@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+ </section>
+
+
+
+    <!-- footer section start -->
+  <footer>
+    <span>Created & Developed by BSB.Club</span>
+  </footer> 
+  
+    <script src="script.js"></script>
+</body>
+
+</html>
