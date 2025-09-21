@@ -43,7 +43,7 @@ $(document).ready(function () {
                 loop: true
             });
         
-            var typed = new Typed(".typing-2", {
+            var typed2 = new Typed(".typing-2", {
                 strings: ["Orientați spre rezultate", "Pasionați de tehnologie", "Creativi", "Deschiși la învățare"],
                 typeSpeed: 100,
                 backSpeed: 60,
@@ -194,4 +194,51 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("total-sum").textContent = total.toFixed(2) + " lei";
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const langBtn = document.getElementById('lang-btn');
+    let currentLang = 'ro'; // limba implicită
+
+    const translations = {
+        ro: {
+            typing: ["Scanați QR coduri", "Adăugați cheltuieli cu ajutorul la AI", "Analizați cheltuielile din ultimile luni"],
+            typing2: ["Orientați spre rezultate", "Pasionați de tehnologie", "Creativi", "Deschiși la învățare"],
+            userInputPlaceholder: "Scrie un mesaj..."
+        },
+        en: {
+            typing: ["Scan QR codes", "Add expenses using AI", "Analyze expenses from recent months"],
+            typing2: ["Results-oriented", "Passionate about technology", "Creative", "Open to learning"],
+            userInputPlaceholder: "Write a message..."
+        }
+    };
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+        });
+        langBtn.textContent = (lang === 'ro') ? 'EN' : 'RO';
+
+        // Update typed.js strings
+        typed.strings = translations[lang].typing;
+        typed.reset();
+        typed2.strings = translations[lang].typing2;
+        typed2.reset();
+
+        // Update placeholder
+        const userInput = document.getElementById('user-input');
+        if(userInput) {
+            userInput.placeholder = translations[lang].userInputPlaceholder;
+        }
+    }
+
+    // Setăm limba inițială
+    setLanguage(currentLang);
+
+    // Schimbare limbă la click
+    langBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        setLanguage(currentLang === 'ro' ? 'en' : 'ro');
+    });
 });

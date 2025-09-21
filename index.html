@@ -25,12 +25,13 @@
                 <a href="/">Spends</a>
             </div>
             <ul class="menu">
-                <li><a href="#home" class="menu-btn">Acasă</a></li>
-                <li><a href="#services" class="menu-btn">Scanare QR</a></li>
-                <li><a href="#software" class="menu-btn">Chat Inteligent</a></li>
-                <li><a href="#work" class="menu-btn">Analitică avansată</a></li>
-                <li><a href="#purchases" class="menu-btn">Istoric</a></li>
-                <li><a href="#about" class="menu-btn">Date de contact</a></li>
+                <li><a href="#home" class="menu-btn"><span data-lang="ro">Acasă</span><span data-lang="en" style="display:none;">Home</span></a></li>
+                <li><a href="#services" class="menu-btn"><span data-lang="ro">Scanare QR</span><span data-lang="en" style="display:none;">QR Scan</span></a></li>
+                <li><a href="#software" class="menu-btn"><span data-lang="ro">Chat Inteligent</span><span data-lang="en" style="display:none;">Smart Chat</span></a></li>
+                <li><a href="#work" class="menu-btn"><span data-lang="ro">Analitică avansată</span><span data-lang-en" style="display:none;">Advanced Analytics</span></a></li>
+                <li><a href="#purchases" class="menu-btn"><span data-lang="ro">Istoric</span><span data-lang="en" style="display:none;">History</span></a></li>
+                <li><a href="#about" class="menu-btn"><span data-lang="ro">Date de contact</span><span data-lang="en" style="display:none;">Contact</span></a></li>
+                <li><a href="#" id="lang-btn">EN</a></li>
             </ul>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -42,8 +43,8 @@
     <section class="home" id="home">
         <div class="max-width">
             <div class="home-content">
-                <div class="text-1">Bine ați venit!</div>
-                <div class="text-2">Aici puteți să:</div>
+                <div class="text-1"><span data-lang="ro">Bine ați venit!</span><span data-lang="en" style="display:none;">Welcome!</span></div>
+                <div class="text-2"><span data-lang="ro">Aici puteți să:</span><span data-lang="en" style="display:none;">Here you can:</span></div>
                 <div class="text-3"><span class="typing"></span></div>
             </div>
         </div>
@@ -54,27 +55,27 @@
     <!-- qr code reader section start -->
     <section class="services" id="services">
     <div class="max-width">
-        <h2 class="title">Scanează QR Code din fotografie</h2>
+        <h2 class="title"><span data-lang="ro">Scanează QR Code din fotografie</span><span data-lang="en" style="display:none;">Scan QR Code from photo</span></h2>
         <div class="services-flex">
 
             <!-- Instrucțiuni - stânga -->
             <div class="services-instructions">
-                <h3>Instrucțiuni</h3>
+                <h3><span data-lang="ro">Instrucțiuni</span><span data-lang="en" style="display:none;">Instructions</span></h3>
                 <ul>
-                    <li>Apasă pe butonul <b>Scanează QR din fotografie</b>.</li>
-                    <li>Selectează imaginea care conține codul QR.</li>
-                    <li>Rezultatul va fi afișat imediat în partea dreaptă.</li>
-                    <li>Asigură-te că imaginea este clară și codul QR este vizibil.</li>
+                    <li><span data-lang="ro">Apasă pe butonul</span><span data-lang="en" style="display:none;">Press the button</span> <b><span data-lang="ro">Scanează QR din fotografie</span><span data-lang="en" style="display:none;">Scan QR from photo</span></b>.</li>
+                    <li><span data-lang="ro">Selectează imaginea care conține codul QR.</span><span data-lang="en" style="display:none;">Select the image containing the QR code.</span></li>
+                    <li><span data-lang="ro">Rezultatul va fi afișat imediat în partea dreaptă.</span><span data-lang="en" style="display:none;">The result will be displayed immediately on the right.</span></li>
+                    <li><span data-lang="ro">Asigură-te că imaginea este clară și codul QR este vizibil.</span><span data-lang="en" style="display:none;">Make sure the image is clear and the QR code is visible.</span></li>
                 </ul>
             </div>
 
             <!-- Card scanare - dreapta -->
             <div class="services-card">
-                <label for="qr-image-upload">Alege o fotografie cu QR:</label>
+                <label for="qr-image-upload"><span data-lang="ro">Alege o fotografie cu QR:</span><span data-lang="en" style="display:none;">Choose a photo with a QR:</span></label>
                 <input type="file" id="qr-image-upload" accept="image/*">
 
                 <div id="qr-reader"></div>
-                <div id="qr-reader-results">Rezultatul scanării va apărea aici</div>
+                <div id="qr-reader-results"><span data-lang="ro">Rezultatul scanării va apărea aici</span><span data-lang="en" style="display:none;">The scan result will appear here</span></div>
             </div>
 
         </div>
@@ -115,11 +116,11 @@ document.getElementById('qr-image-upload').addEventListener('change', function(e
 <!-- software section start -->
 <section class="chat-section" id="software">
     <div class="chat-container">
-        <h2>Chat GPT</h2>
+        <h2><span data-lang="ro">Chat Inteligent</span><span data-lang="en" style="display:none;">Smart Chat</span></h2>
         <div id="chat-box" class="chat-box"></div>
         <div class="chat-input">
             <input type="text" id="user-input" placeholder="Scrie un mesaj..." />
-            <button id="send-btn">Trimite</button>
+            <button id="send-btn"><span data-lang="ro">Trimite</span><span data-lang="en" style="display:none;">Send</span></button>
         </div>
     </div>
 </section>
@@ -130,78 +131,78 @@ document.getElementById('qr-image-upload').addEventListener('change', function(e
 
    <!------work section------>
   <section class="work" id="work">
-  <h2 class="title">Analiza cumpărăturilor</h2>
+  <h2 class="title"><span data-lang="ro">Analiza cumpărăturilor</span><span data-lang="en" style="display:none;">Shopping Analysis</span></h2>
   <div class="work-content">
     <div class="work-item">
-      <h3>Tehnologii digitale</h3>
-      <p>0 operațiuni</p>
+      <h3><span data-lang="ro">Tehnologii digitale</span><span data--lang="en" style="display:none;">Digital Technologies</span></h3>
+      <p><span data-lang="ro">0 operațiuni</span><span data-lang="en" style="display:none;">0 operations</span></p>
       <div class="progress-bar">
         <div class="fill hardware" style="width: 0%;"></div>
       </div>
-      <p>0% din total</p>
+      <p>0% <span data-lang="ro">din total</span><span data-lang="en" style="display:none;">of total</span></p>
     </div>
 
     <div class="work-item">
-      <h3>Alimente și băuturi</h3>
-      <p>4 operațiuni</p>
+      <h3><span data-lang="ro">Alimente și băuturi</span><span data-lang="en" style="display:none;">Food and drinks</span></h3>
+      <p><span data-lang="ro">4 operațiuni</span><span data-lang="en" style="display:none;">4 operations</span></p>
       <div class="progress-bar">
         <div class="fill cloud" style="width: 9.75%;"></div>
       </div>
-      <p>9,75% din total</p>
+      <p>9,75% <span data-lang="ro">din total</span><span data-lang="en" style="display:none;">of total</span></p>
     </div>
 
     <div class="work-item">
-      <h3>Baruri și restaurante</h3>
-      <p>1 operațiune</p>
+      <h3><span data-lang="ro">Baruri și restaurante</span><span data-lang="en" style="display:none;">Bars and restaurants</span></h3>
+      <p><span data-lang="ro">1 operațiune</span><span data-lang="en" style="display:none;">1 operation</span></p>
       <div class="progress-bar">
         <div class="fill web" style="width: 6.5%;"></div>
       </div>
-      <p>6,5% din total</p>
+      <p>6,5% <span data-lang="ro">din total</span><span data-lang="en" style="display:none;">of total</span></p>
     </div>
 
     <div class="work-item">
-      <h3>Treansport și livrare</h3>
-      <p>0 operațiuni</p>
+      <h3><span data-lang="ro">Transport și livrare</span><span data-lang="en" style="display:none;">Transport and delivery</span></h3>
+      <p><span data-lang="ro">0 operațiuni</span><span data-lang="en" style="display:none;">0 operations</span></p>
       <div class="progress-bar">
         <div class="fill software" style="width: 0%;"></div>
       </div>
-      <p>0% din total</p>
+      <p>0% <span data-lang="ro">din total</span><span data-lang="en" style="display:none;">of total</span></p>
     </div>
 
     <div class="work-item">
-      <h3>Transferuri</h3>
-      <p>0 operațiuni</p>
+      <h3><span data-lang="ro">Transferuri</span><span data-lang="en" style="display:none;">Transfers</span></h3>
+      <p><span data-lang="ro">0 operațiuni</span><span data--lang="en" style="display:none;">0 operations</span></p>
       <div class="progress-bar">
         <div class="fill other" style="width: 0%;"></div>
       </div>
-      <p>0% din total</p>
+      <p>0% <span data-lang="ro">din total</span><span data-lang="en" style="display:none;">of total</span></p>
     </div>
 
     <div class="work-item">
-      <h3>Călătorii</h3>
-      <p>0 operațiuni</p>
+      <h3><span data-lang="ro">Călătorii</span><span data-lang="en" style="display:none;">Travels</span></h3>
+      <p><span data-lang="ro">0 operațiuni</span><span data-lang="en" style="display:none;">0 operations</span></p>
       <div class="progress-bar">
         <div class="fill other" style="width: 0%;"></div>
       </div>
-      <p>0% din total</p>
+      <p>0% <span data-lang="ro">din total</span><span data-lang="en" style="display:none;">of total</span></p>
     </div>
 
       <div class="work-item">
-      <h3>Turism și distracții</h3>
-      <p>0 operațiuni</p>
+      <h3><span data-lang="ro">Turism și distracții</span><span data-lang="en" style="display:none;">Tourism and entertainment</span></h3>
+      <p><span data-lang="ro">0 operațiuni</span><span data-lang="en" style="display:none;">0 operations</span></p>
       <div class="progress-bar">
         <div class="fill other" style="width: 0%;"></div>
       </div>
-      <p>0% din total</p>
+      <p>0% <span data-lang="ro">din total</span><span data-lang="en" style="display:none;">of total</span></p>
       </div>
 
       <div class="work-item">
-      <h3>Altele</h3>
-      <p>5 operațiuni</p>
+      <h3><span data-lang="ro">Altele</span><span data-lang="en" style="display:none;">Other</span></h3>
+      <p><span data-lang="ro">5 operațiuni</span><span data-lang="en" style="display:none;">5 operations</span></p>
       <div class="progress-bar">
         <div class="fill other" style="width: 83.8%;"></div>
       </div>
-      <p>83,8% din total</p>
+      <p>83,8% <span data-lang="ro">din total</span><span data-lang="en" style="display:none;">of total</span></p>
     </div>
   </div>
 </section>
@@ -210,14 +211,14 @@ document.getElementById('qr-image-upload').addEventListener('change', function(e
 <!-- Sectiunea Produse -->
 <section class="purchases" id="purchases">
   <div class="max-width">
-    <h2 class="title">Produse cumpărate în ultima lună</h2>
+    <h2 class="title"><span data-lang="ro">Produse cumpărate în ultima lună</span><span data-lang="en" style="display:none;">Products purchased in the last month</span></h2>
 
     <table class="products-table" id="products-table">
       <thead>
         <tr>
-          <th>Produs</th>
-          <th>Cantitate</th>
-          <th>Preț unitar (lei)</th>
+          <th><span data-lang="ro">Produs</span><span data-lang="en" style="display:none;">Product</span></th>
+          <th><span data-lang="ro">Cantitate</span><span data-lang="en" style="display:none;">Quantity</span></th>
+          <th><span data-lang="ro">Preț unitar (lei)</span><span data-lang="en" style="display:none;">Unit price (lei)</span></th>
           <th>Total (lei)</th>
         </tr>
       </thead>
@@ -259,7 +260,7 @@ document.getElementById('qr-image-upload').addEventListener('change', function(e
           <td class="subtotal"></td>
         </tr>
          <tr>
-          <td>Consultație medicală</td>
+          <td><span data-lang="ro">Consultație medicală</span><span data-lang="en" style="display:none;">Medical consultation</span></td>
           <td>1</td>
           <td>800.0</td>
           <td class="subtotal"></td>
@@ -285,7 +286,7 @@ document.getElementById('qr-image-upload').addEventListener('change', function(e
     </table>
 
     <div class="total">
-      Total cheltuit: <span class="highlight" id="total-sum">0 lei</span>
+      <span data-lang="ro">Total cheltuit:</span><span data-lang="en" style="display:none;">Total spent:</span> <span class="highlight" id="total-sum">0 lei</span>
     </div>
   </div>
 </section>
@@ -295,25 +296,25 @@ document.getElementById('qr-image-upload').addEventListener('change', function(e
  <!-- about section start -->
  <section class="about" id="about">
     <div class="max-width">
-        <h2 class="title">Despe noi</h2>
+        <h2 class="title"><span data-lang="ro">Despre noi</span><span data-lang="en" style="display:none;">About us</span></h2>
         <div class="about-content">
             <div class="column left">
                 <img src="imagini/Lucid_Origin_Create_a_modern_sleek_and_professional_logo_for_a_2 copy.jpg" alt="Spends Logo">
             </div>
             <div class="column right">
-                <div class="text">Noi suntem BSB.Club, <span class="typing-2"></span></div>
-                <p>Echipa noastră este formată din developeri aflați la început de carieră, dedicați procesului de învățare
+                <div class="text"><span data-lang="ro">Noi suntem BSB.Club,</span><span data-lang="en" style="display:none;">We are BSB.Club,</span> <span class="typing-2"></span></div>
+                <p><span data-lang="ro">Echipa noastră este formată din developeri aflați la început de carieră, dedicați procesului de învățare
                    și dezvoltării continue. Ne caracterizează perseverența, dorința de perfecționare și capacitatea de a
-                   colabora eficient pentru a livra rezultate de calitate.
-                <p>Considerăm că fiecare proiect reprezintă o
-                   oportunitate de a acumula experiență valoroasă și de a contribui la crearea de soluții inovatoare în domeniul tehnologiei.
+                   colabora eficient pentru a livra rezultate de calitate.</span><span data-lang="en" style="display:none;">Our team is made up of developers at the beginning of their careers, dedicated to the learning process and continuous development. We are characterized by perseverance, the desire for improvement and the ability to collaborate effectively to deliver quality results.</span>
+                <p><span data-lang="ro">Considerăm că fiecare proiect reprezintă o
+                   oportunitate de a acumula experiență valoroasă și de a contribui la crearea de soluții inovatoare în domeniul tehnologiei.</span><span data-lang="en" style="display:none;">We believe that each project represents an opportunity to accumulate valuable experience and to contribute to the creation of innovative solutions in the field of technology.</span>
                 </p>
                 </p>
                 <div class="icons">
                     <div class="row">
                         <i class="fas fa-map-pin" style="width: 25px;"></i>
                         <div class="info">
-                            <div class="head">Adresa</div>
+                            <div class="head"><span data-lang="ro">Adresa</span><span data-lang="en" style="display:none;">Address</span></div>
                             <div class="subtitle">Chisinau, Republica Moldova</div>
                         </div>
                     </div>
@@ -335,7 +336,7 @@ document.getElementById('qr-image-upload').addEventListener('change', function(e
 
     <!-- footer section start -->
   <footer>
-    <span>Created & Developed by BSB.Club</span>
+    <span><span data-lang="ro">Creat și dezvoltat de BSB.Club</span><span data-lang="en" style="display:none;">Created & Developed by BSB.Club</span></span>
   </footer> 
   
     <script src="script.js"></script>
